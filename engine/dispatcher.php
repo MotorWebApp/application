@@ -6,6 +6,7 @@
 */
 
 dispatch('/', 'mainPage');
+dispatch('/city/:c', 'city');
 
 
 ?>

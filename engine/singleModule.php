@@ -9,8 +9,9 @@ function loadCounterBlock() {
 
 }
 
-function loadMap() {
-	return addBlock( "mapBlock" );
+function loadMap( $city ) {
+	$array = array( "city" => $city );
+	return addBlock( "mapBlock", $array );
 }
 
 function loadHeader() {
@@ -44,7 +45,8 @@ function loadPageHeader() {
 			"http://fonts.googleapis.com/css?family=Lato:400,300",
 			"http://fonts.googleapis.com/css?family=Raleway:400,300,500"), 
 		"js" => array( 
-			"http://maps.google.com/maps/api/js?sensor=false" ) );
+			"https://maps.googleapis.com/maps/api/js?sensor=false",
+			"gmaps.js", ) );
 	return addBlock( "beginHtml", $array );
 }
 
