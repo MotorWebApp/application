@@ -9,7 +9,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="#">
-				<img src="views/image/logo2.png" alt=""><span>TEst APPNAME.RU</span>
+				<img src="views/image/logo2.png" alt=""><span>TEst   APPNAME.RU</span>
 			</a>
 		 </div><!--Navbar header End-->
 		<nav class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
