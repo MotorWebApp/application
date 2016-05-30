@@ -40,7 +40,7 @@ foreach ($files as $file) {
 			'postcode' => $data['result']['items'][0]['address']['postcode'],
 		];
 		
-		$q .= strlen($q) ? : ;
+		// $q .= strlen($q) ? : ;
 
 	}
 }
