@@ -20,7 +20,7 @@ function beginHtml( $args ) {
 	if( property_exists( $args, "css" ) ) {
 		foreach( $args->css as $stylesheet ) {
 			if( ( strpos( $stylesheet, "http://" ) === false ) && ( strpos( $stylesheet, "https://" ) === false ) ) {
-				$stylesheet = "views/css/" . $stylesheet;
+				$stylesheet = "/views/css/" . $stylesheet;
 			}
 			$css .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $stylesheet . "\" />\n";
 		}
@@ -28,7 +28,7 @@ function beginHtml( $args ) {
 	if( property_exists( $args, "js" ) ) {
 		foreach( $args->js as $script ) {
 			if( ( strpos( $script, "http://" ) === false ) && ( strpos( $script, "https://" ) === false ) ) {
-				$script = "views/js/" . $script;
+				$script = "/views/js/" . $script;
 			}
 			$js .= "<script type=\"text/javascript\" src=\"" . $script . "\" ></script>\n";
 		}

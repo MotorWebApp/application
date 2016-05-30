@@ -14,11 +14,15 @@ $base_uri = 'http://test1.ru';
 ###########
 #	Section 1: database
 ###########
-$mysql_host = "localhost";
-$mysql_database = "motor";
-$mysql_user = "root";//"db_admin";
-$mysql_password = "";//"MTIzMTIzMTIz";
-$dsn = "mysql:host=$mysql_host;dbname=$mysql_database;charset=utf8";
+$pdo = "";
+$dbhost = $_SERVER['RDS_HOSTNAME'];
+$dbport = $_SERVER['RDS_PORT'];
+$dbname = $_SERVER['RDS_DB_NAME'];
+
+$dsn = "mysql:host={$dbhost};port={$dbport};dbname={$dbname}";
+$username = $_SERVER['RDS_USERNAME'];
+$password = $_SERVER['RDS_PASSWORD'];
+
 
 
 

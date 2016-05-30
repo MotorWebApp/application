@@ -21,10 +21,10 @@ function addBlock( $block, $args = array() ) {
 	return $response;
 }
 
-function mainPage() {
+function mainPage( $city = "moscow" ) {
 	$html = loadPageHeader();
 	$html .= loadHeader();
-	$html .= loadMap();
+	$html .= loadMap( $city );
 	$html .= addBlock( "latestNewsBlock", "dcjhd" );
 	$html .= addBlock( "counterBlock", "dcjhd" );
 	$html .= addBlock( "partnersBlock", "dcjhd" );
@@ -32,6 +32,14 @@ function mainPage() {
 	$html .= addBlock( "footerBlock", "dcjhd" );
 	$html .= loadPageCloser();
 	return html( $html );
+}
+
+function city() {
+	$c = params('c');
+	if( empty($c) ) {
+		$c = "moscow";
+	}
+	return mainPage( $c );
 }
 
 function anotherPage(){

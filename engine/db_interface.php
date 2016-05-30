@@ -6,7 +6,8 @@
 */
 
 // DataBase connection
-$pdo = new PDO( $dsn, $mysql_user, base64_decode( $mysql_password ), 
+//echo 1;
+$pdo = new PDO($dsn, $username, $password, 
 	array(
 		PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 		PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
@@ -76,6 +77,9 @@ function __prepareSelectQuery( $from, $what, $where ) {
 				$item_parts[ 0 ] = "`" . $p[ 0 ] . "`.`" . $p[ 1 ] . "`";
 			} else {
 				$item_parts[ 0 ] = "`" . $item_parts[ 0 ] . "`";
+			}
+			if(!is_numeric( $item_parts[ 1 ] )) {
+				$item_parts[ 1 ] = "'" . $item_parts[ 1 ] . "'";
 			}
 			$item = $item_parts[ 0 ] . "=" . $item_parts[ 1 ];
 			$where .= $item;
