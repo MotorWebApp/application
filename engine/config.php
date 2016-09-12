@@ -15,19 +15,12 @@ $base_uri = 'http://test1.ru';
 #	Section 1: database
 ###########
 $pdo = "";
-$dbhost = $_SERVER['RDS_HOSTNAME'];
-$dbport = $_SERVER['RDS_PORT'];
-$dbname = $_SERVER['RDS_DB_NAME'];
 
-$dsn = "mysql:host={$dbhost};port={$dbport};dbname={$dbname}";
-$username = $_SERVER['RDS_USERNAME'];
-$password = $_SERVER['RDS_PASSWORD'];
-
-$dbhost = "aamlwu9v9zbeuw.cdxd25ix2ffo.us-west-2.rds.amazonaws.com";
+$dbhost = "mysql.hostinger.ru";//aamlwu9v9zbeuw.cdxd25ix2ffo.us-west-2.rds.amazonaws.com";
 $dbport = "3306";
-$dbname = "ebdb";
-$username = "root";
-$password = "root123123";
+$dbname = "u738076346_main";//$_SERVER['RDS_DB_NAME'];
+$username = "u738076346_root";//$_SERVER['RDS_USERNAME'];
+$password = "rX0FATjJZb";//$_SERVER['RDS_PASSWORD'];
 
 
 $dsn = "mysql:host={$dbhost};port={$dbport};dbname={$dbname};";
