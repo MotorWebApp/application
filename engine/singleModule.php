@@ -27,7 +27,7 @@ function loadHeader() {
 	if( isset( $_SESSION['userid'] ) ) {
 		$authorized = true;
 	}
-	var $lk = array();
+	$lk = array();
 	if( $authorized ) {
 		$lk[0] = $_SESSION[ 'username' ];
 		$lk[1] = "/lk";
