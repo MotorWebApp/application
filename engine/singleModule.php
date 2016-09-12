@@ -56,19 +56,14 @@ function loadPageHeader() {
 	$array = array( 
 		"title" => "CheckEngine.ru", 
 		"css" => array( 
-			"bootstrap.min.css", 
-			"font-awesome.min.css",
-			"animate.css",
-			"owl.carousel.css",
-			"owl.theme.css",
-			"prettyPhoto.css",
-			"red.css",
-			"custom.css",
-			"responsive.css",
-			"jquery.fancybox.css?v=2.1.5",
+			"normalize.css">
+			"font-awesome.css">
+			"bootstrap.min.css">
+			"templatemo-style.css">
 			"http://fonts.googleapis.com/css?family=Lato:400,300",
 			"http://fonts.googleapis.com/css?family=Raleway:400,300,500"), 
 		"js" => array( 
+			"vendor/modernizr-2.6.2.min.js",
 			"https://maps.googleapis.com/maps/api/js?sensor=false",
 			"gmaps.js", 
 			"siteengine.js"

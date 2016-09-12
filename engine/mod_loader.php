@@ -22,7 +22,6 @@ function addBlock( $block, $args = array() ) {
 }
 
 function mainPage( $city = "msk" ) {
-	echo 123123123;
 	$html = loadPageHeader();
 	$html .= loadHeader();
 	$html .= loadMap( $city );
