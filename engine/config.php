@@ -23,7 +23,13 @@ $dsn = "mysql:host={$dbhost};port={$dbport};dbname={$dbname}";
 $username = $_SERVER['RDS_USERNAME'];
 $password = $_SERVER['RDS_PASSWORD'];
 
+$dbhost = "aamlwu9v9zbeuw.cdxd25ix2ffo.us-west-2.rds.amazonaws.com";
+$dbport = "3306";
+$dbname = "ebdb";
+$username = "root";
+$password = "root123123";
 
 
+$dsn = "mysql:host={$dbhost};port={$dbport};dbname={$dbname};";
 
 ?>

@@ -15,10 +15,34 @@ function loadMap( $city ) {
 }
 
 function loadHeader() {
+	/*
+	 * params:
+	 * 	menu:
+	 *		0 - menu item name
+	 *		1 - href
+	 *		2 - js onclick() function
+	 *		3 - array of subitems
+	*/
+	$authorized = false;
+	if( isset( $_SESSION['userid'] ) ) {
+		$authorized = true;
+	}
+	var $lk = array();
+	if( $authorized ) {
+		$lk[0] = $_SESSION[ 'username' ];
+		$lk[1] = "/lk";
+		$lk[2] = "";
+		$lk[3] = array(); //there will be subitems
+	} else {
+		$lk[0] = "Войти";
+		$lk[1] = "#";
+		$lk[2] = "auth()";
+	}
 	$array = array(
 		"menu" => array(
 			array( "Home", "#slider_part" ),
-			array( "Services", "#service" )
+			array( "Services", "#service" ),
+			$lk
 		)
 	);
 	return addBlock( "headerBlock", $array );
@@ -46,7 +70,10 @@ function loadPageHeader() {
 			"http://fonts.googleapis.com/css?family=Raleway:400,300,500"), 
 		"js" => array( 
 			"https://maps.googleapis.com/maps/api/js?sensor=false",
-			"gmaps.js", ) );
+			"gmaps.js", 
+			"siteengine.js"
+			) 
+		);
 	return addBlock( "beginHtml", $array );
 }
 
