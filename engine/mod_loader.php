@@ -21,7 +21,7 @@ function addBlock( $block, $args = array() ) {
 	return $response;
 }
 
-function mainPage( $city = "moscow" ) {
+function mainPage( $city = "msk" ) {
 	echo 123123123;
 	$html = loadPageHeader();
 	$html .= loadHeader();
@@ -38,7 +38,7 @@ function mainPage( $city = "moscow" ) {
 function city() {
 	$c = params('c');
 	if( empty($c) ) {
-		$c = "moscow";
+		$c = "msk";
 	}
 	return mainPage( $c );
 }
