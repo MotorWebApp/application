@@ -56,10 +56,10 @@ function loadPageHeader() {
 	$array = array( 
 		"title" => "CheckEngine.ru", 
 		"css" => array( 
-			"normalize.css">
-			"font-awesome.css">
-			"bootstrap.min.css">
-			"templatemo-style.css">
+			"normalize.css",
+			"font-awesome.css",
+			"bootstrap.min.css",
+			"templatemo-style.css",
 			"http://fonts.googleapis.com/css?family=Lato:400,300",
 			"http://fonts.googleapis.com/css?family=Raleway:400,300,500"), 
 		"js" => array( 
