@@ -8,7 +8,7 @@
 ###########
 #	Section 0: base
 ###########
-$base_uri = 'http://test1.ru';
+//$base_uri = 'http://test1.ru';
 //option( 'base_uri', '/' );
 
 ###########
