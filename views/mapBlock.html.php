@@ -1,16 +1,16 @@
 <!-- MAIN CONTENT -->
-<div class="main-content">
-	<div class="fluid-container">
-		<div class="content-wrapper">
+<div class="main-content full-height">
+	<div class="fluid-container full-height">
+		<div class="content-wrapper full-height">
 			<!-- ABOUT -->
-			<div class="page-section" id="about">
-				<div class="row">
-					<div class="col-md-12">
+			<div class="full-height page-section" id="about">
+				<div class="row full-height">
+					<div class="col-md-12 full-height">
 					<!-- Slider start -->
-					<div id="g-map" class="no-padding">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="map" id="map"></div>
+					<div id="g-map full-height" class="no-padding">
+						<div class="container-fluid full-height">
+							<div class="row full-height">
+								<div class="map full-height" id="map"></div>
 							</div>
 						</div>
 					</div>

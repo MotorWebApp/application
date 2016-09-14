@@ -243,7 +243,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .content-wrapper {
-  padding: 0 80px;
+  /* padding: 0 80px; */
 }
 @media screen and (max-width: 992px) {
   .content-wrapper {
@@ -269,8 +269,12 @@ hr {
   margin-bottom: 0;
 }
 
+.full-height {
+	height: 100%;
+}
+
 .page-section {
-  padding-top: 80px;
+  /* padding-top: 80px; */
 }
 
 /*---------------------------------------------------------
