@@ -46,7 +46,7 @@
 		</ul>
 	</div> <!-- .social-icons -->
 </div> <!-- .sidebar-menu -->
-
+<!--
 <div class="banner-bg" id="top">
 	<div class="banner-overlay"></div>
 	<div class="welcome-text">
@@ -54,3 +54,4 @@
 		<h5>This is a mobile friendly layout with Bootstrap v3.3.1 framework. Maecenas eu ante at nunc posuere fringilla sit amet non dolor. Proin condimentum fermentum nunc.</h5>
 	</div>
 </div>
+-->
