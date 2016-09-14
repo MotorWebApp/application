@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /*
 * singleModule.php
@@ -71,6 +71,5 @@ function loadPageHeader() {
 		);
 	return addBlock( "beginHtml", $array );
 }
-
 
 ?>
