@@ -1,4 +1,4 @@
-<div class="responsive-header visible-xs visible-sm">
+﻿<div class="responsive-header visible-xs visible-sm">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -21,7 +21,6 @@
 		</div>
 	</div>
 </div>
-
 <!-- SIDEBAR -->
 <div class="sidebar-menu hidden-xs hidden-sm">
 	<div class="top-section">
