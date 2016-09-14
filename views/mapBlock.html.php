@@ -1,4 +1,4 @@
-﻿<!-- MAIN CONTENT -->
+<!-- MAIN CONTENT -->
 <div class="main-content">
 	<div class="fluid-container">
 		<div class="content-wrapper">
