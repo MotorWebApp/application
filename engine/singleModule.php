@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 
 /*
 * singleModule.php
@@ -34,7 +34,7 @@ function loadHeader() {
 		$lk[2] = "";
 		$lk[3] = array(); //there will be subitems
 	} else {
-		$lk[0] = "Âîéòè";
+		$lk[0] = "Ð’Ð¾Ð¹Ñ‚Ð¸";
 		$lk[1] = "#";
 		$lk[2] = "auth()";
 	}

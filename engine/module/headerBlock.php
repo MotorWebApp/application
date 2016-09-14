@@ -7,6 +7,7 @@
 function headerBlock( $args ) {
 	$args = json_decode( $args );
 	$menu = "";
+	$block = trim( $block );
 	if( property_exists( $args, "menu" ) ) {
 		foreach( $args->menu as $item ) {
 			$name = isset($item[0]) ? $item[0] : "";
