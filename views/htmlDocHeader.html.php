@@ -11,10 +11,5 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<? echo $css; ?>
 		<? echo $js; ?>
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/font-awesome.css">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/templatemo-style.css">
-		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 	</head>
 	<body class="full-height">
