@@ -54,7 +54,7 @@ function loadPageCloser() {
 
 function loadPageHeader() {
 	$array = array( 
-		"title" => "CheckEngine.ru", 
+		"title" => "EngineCheck.ru", 
 		"css" => array( 
 			"normalize.css",
 			"font-awesome.css",
@@ -65,6 +65,7 @@ function loadPageHeader() {
 		"js" => array( 
 			"vendor/modernizr-2.6.2.min.js",
 			"https://api-maps.yandex.ru/2.1/?lang=ru_RU",
+			"bootstrap.min.js",
 			"siteengine.js"
 			) 
 		);
