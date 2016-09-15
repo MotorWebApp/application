@@ -66,7 +66,7 @@ function loadPageHeader() {
 			"vendor/modernizr-2.6.2.min.js",
 			"https://api-maps.yandex.ru/2.1/?lang=ru_RU",
 			"jquery.js",
-			"bootstrap.min.js",
+			"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous",
 			"siteengine.js"
 			) 
 		);
