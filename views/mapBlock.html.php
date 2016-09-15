@@ -23,9 +23,9 @@
 
 
 
-<script src="js/vendor/jquery-1.10.2.min.js"></script>
-<script src="js/min/plugins.min.js"></script>
-<script src="js/min/main.min.js"></script>
+<script src="/views/js/vendor/jquery-1.10.2.min.js"></script>
+<script src="/views/js/min/plugins.min.js"></script>
+<script src="/views/js/min/main.min.js"></script>
 <script>
 var map = new google.maps.Map(document.getElementById("map"),{
 	center: {lat: <? echo $lat; ?>, lng: <? echo $lon; ?>},
