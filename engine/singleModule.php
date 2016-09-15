@@ -64,8 +64,7 @@ function loadPageHeader() {
 			"http://fonts.googleapis.com/css?family=Raleway:400,300,500"), 
 		"js" => array( 
 			"vendor/modernizr-2.6.2.min.js",
-			"https://maps.googleapis.com/maps/api/js?sensor=false",
-			"gmaps.js", 
+			"https://api-maps.yandex.ru/2.1/?lang=ru_RU",
 			"siteengine.js"
 			) 
 		);

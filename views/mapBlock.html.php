@@ -27,8 +27,8 @@
 <script src="/views/js/min/plugins.min.js"></script>
 <script src="/views/js/min/main.min.js"></script>
 <script>
-var map = new google.maps.Map(document.getElementById("map"),{
-	center: {lat: <? echo $lat; ?>, lng: <? echo $lon; ?>},
-	zoom: 10
-  });
+var map = new ymaps.Map("map", {
+				center: [<? echo $lat; ?>, <? echo $lon; ?>],
+				zoom: 7
+});
 </script>
