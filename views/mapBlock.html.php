@@ -27,8 +27,13 @@
 <script src="/views/js/min/plugins.min.js"></script>
 <script src="/views/js/min/main.min.js"></script>
 <script>
-var map = new ymaps.Map("map", {
-				center: [<? echo $lat; ?>, <? echo $lon; ?>],
-				zoom: 7
-});
+ymaps.ready(init);
+    var myMap;
+
+    function init(){     
+        myMap = new ymaps.Map("map", {
+            center: [<? echo $lat; ?>, <? echo $lon; ?>],
+            zoom: 7
+        });
+    }
 </script>
