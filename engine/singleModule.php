@@ -58,7 +58,7 @@ function loadPageHeader() {
 		"css" => array( 
 			"normalize.css",
 			"font-awesome.css",
-			"bootstrap.min.css",
+			"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous",
 			"templatemo-style.css",
 			"http://fonts.googleapis.com/css?family=Lato:400,300",
 			"http://fonts.googleapis.com/css?family=Raleway:400,300,500"), 
@@ -66,7 +66,7 @@ function loadPageHeader() {
 			"vendor/modernizr-2.6.2.min.js",
 			"https://api-maps.yandex.ru/2.1/?lang=ru_RU",
 			"jquery.js",
-			"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous",
+			"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\" integrity=\"sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa\" crossorigin=\"anonymous",
 			"siteengine.js"
 			) 
 		);

@@ -21,11 +21,6 @@
 	</div>
 </div>
 
-
-
-<script src="/views/js/vendor/jquery-1.10.2.min.js"></script>
-<script src="/views/js/min/plugins.min.js"></script>
-<script src="/views/js/min/main.min.js"></script>
 <script>
 ymaps.ready(init);
     var myMap;
