@@ -8,7 +8,7 @@ function headerBlock( $args ) {
 	$args = json_decode( $args );
 	$menu = "";
 	if( property_exists( $args, "menu" ) ) {
-		$menu = addMenu( $args->menu );
+		$menu = addMenu( $args->menu, $menu );
 	}
 	return render( "pageHeader.html.php", null, array( "menu" => $menu ) );
 }
