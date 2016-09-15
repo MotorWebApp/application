@@ -25,6 +25,7 @@ function mainPage( $city = "msk" ) {
 	$html = loadPageHeader();
 	$html .= loadHeader();
 	$html .= loadMap( $city );
+	$html .= addBlock( "authBlock" );
 	$html .= addBlock( "latestNewsBlock", "dcjhd" );
 	$html .= addBlock( "counterBlock", "dcjhd" );
 	$html .= addBlock( "partnersBlock", "dcjhd" );
@@ -43,10 +44,6 @@ function city() {
 }
 
 function anotherPage(){
-
-}
-
-function authBlock() {
 
 }
 

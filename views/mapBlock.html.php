@@ -33,7 +33,7 @@ ymaps.ready(init);
     function init(){     
         myMap = new ymaps.Map("map", {
             center: [<? echo $lat; ?>, <? echo $lon; ?>],
-            zoom: 7
+            zoom: 11
         });
     }
 </script>

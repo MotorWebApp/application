@@ -17,6 +17,10 @@
 
 })(jQuery);
 
+function auth() {
+	$('#authModal').modal('show');
+}
+
 
 
 
