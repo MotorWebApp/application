@@ -40,7 +40,9 @@ function loadHeader() {
 		$authorize_url = $vk->getAuthorizeURL( $vk_config[ 'api_settings' ], $vk_config[ 'callback_url' ]);
 	} else {
 		$access_token = $vk->getAccessToken( $_REQUEST[ 'code' ], $vk_config[ 'callback_url' ] );
-		echo $access_token;
+		$_SESSION['userid'] = $access_token['user_id'];
+		$_SESSION['access_token'] = $access_token['access_token'];
+		header( $vk_config[ 'callback_url' ] );
 	}
 	
 	$authorized = false;
