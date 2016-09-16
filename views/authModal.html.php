@@ -46,12 +46,14 @@
 						</form>
 					</div>
 				</div>
-				<div style="width: 100%; height: 20px; margin-bottom: 20px; padding: 20px 0; border-bottom: 1px solid black; text-align: center">
+				<div style="width: 100%; height: 20px; margin-bottom: 20px; padding: 20px 0; border-bottom: 1px solid #ddd; text-align: center">
 					<span style="font-size: 16px; background-color: #fff; padding: 0 10px;">
 						или через VK <!--Padding is optional-->
 					</span>
 				</div>
-				<button type="button" class="btn btn-primary"><i class="fa fa-vk" aria-hidden="true"></i>Войти через ВК</button>
+				<a href="#" id="vk_auth">
+					<button type="button" class="btn btn-primary"><i class="fa fa-vk" aria-hidden="true"></i>Войти через ВК</button>
+				</a>
 			</div>
 			<div class="text-center modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>

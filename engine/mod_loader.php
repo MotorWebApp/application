@@ -22,6 +22,8 @@ function addBlock( $block, $args = array() ) {
 }
 
 function mainPage( $city = "msk" ) {
+	require_once( '../lib/VK.php' );
+	require_once( '../lib/VKException.php' );
 	$html = loadPageHeader();
 	$html .= loadHeader();
 	$html .= loadMap( $city );

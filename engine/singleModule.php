@@ -23,6 +23,24 @@ function loadHeader() {
 	 *		2 - js onclick() function
 	 *		3 - array of subitems
 	*/
+	
+	
+	$vk_config = array(
+		'app_id'		=> '5012186',
+		'api_secret'	=> '6aWMLP567gsUCLBsX6xL',
+		'callback_url'  => "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";,
+		'api_settings'  => 'friends' // In this example use 'friends'.
+	);
+	
+	$vk = new VK\VK( $vk_config[ 'app_id' ], $vk_config[ 'api_secret' ] );
+
+	if ( !isset( $_REQUEST[ 'code' ] ) ) {
+		$$authorize_url = $vk->getAuthorizeURL( $vk_config[ 'api_settings' ], $vk_config[ 'callback_url' ]);
+	} else {
+		$access_token = $vk->getAccessToken( $_REQUEST[ 'code' ], $vk_config[ 'callback_url' ] );
+		echo $access_token;
+	}
+	
 	$authorized = false;
 	if( isset( $_SESSION['userid'] ) ) {
 		$authorized = true;
@@ -36,7 +54,7 @@ function loadHeader() {
 	} else {
 		$lk[0] = "Войти";
 		$lk[1] = "#";
-		$lk[2] = "auth()";
+		$lk[2] = "auth( '" . $authorize_url . "' )";
 	}
 	$array = array(
 		"menu" => array(
@@ -60,7 +78,7 @@ function loadPageHeader() {
 			"font-awesome.css",
 			"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous",
 			"templatemo-style.css",
-			"https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=cyrillic"), 
+			"https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=cyrillic	"), 
 		"js" => array( 
 			"vendor/modernizr-2.6.2.min.js",
 			"https://api-maps.yandex.ru/2.1/?lang=ru_RU",
