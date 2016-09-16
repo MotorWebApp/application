@@ -28,14 +28,15 @@ function loadHeader() {
 	$vk_config = array(
 		'app_id'		=> '5631456',
 		'api_secret'	=> '8skDiqK3C5KTVaqEkj9S',
-		'callback_url'  => "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";,
+		'callback_url'  => "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]",
 		'api_settings'  => 'friends' // In this example use 'friends'.
 	);
 	
 	$vk = new VK\VK( $vk_config[ 'app_id' ], $vk_config[ 'api_secret' ] );
-
+	$authorize_url = "";
+	$access_token = "";
 	if ( !isset( $_REQUEST[ 'code' ] ) ) {
-		$$authorize_url = $vk->getAuthorizeURL( $vk_config[ 'api_settings' ], $vk_config[ 'callback_url' ]);
+		$authorize_url = $vk->getAuthorizeURL( $vk_config[ 'api_settings' ], $vk_config[ 'callback_url' ]);
 	} else {
 		$access_token = $vk->getAccessToken( $_REQUEST[ 'code' ], $vk_config[ 'callback_url' ] );
 		echo $access_token;
