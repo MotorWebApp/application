@@ -26,8 +26,8 @@ function loadHeader() {
 	
 	
 	$vk_config = array(
-		'app_id'		=> '5012186',
-		'api_secret'	=> '6aWMLP567gsUCLBsX6xL',
+		'app_id'		=> '5631456',
+		'api_secret'	=> '8skDiqK3C5KTVaqEkj9S',
 		'callback_url'  => "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";,
 		'api_settings'  => 'friends' // In this example use 'friends'.
 	);
