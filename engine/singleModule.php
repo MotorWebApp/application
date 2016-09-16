@@ -24,11 +24,12 @@ function loadHeader() {
 	 *		3 - array of subitems
 	*/
 	
+	$uri = "http://$_SERVER[SERVER_NAME]$_SERVER[REQUEST_URI]";
 	
 	$vk_config = array(
 		'app_id'		=> '5631456',
 		'api_secret'	=> '8skDiqK3C5KTVaqEkj9S',
-		'callback_url'  => "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]",
+		'callback_url'  => explode( "?", $uri )[0],
 		'api_settings'  => 'friends' // In this example use 'friends'.
 	);
 	
@@ -54,8 +55,8 @@ function loadHeader() {
 		$lk[3] = array(); //there will be subitems
 	} else {
 		$lk[0] = "Войти";
-		$lk[1] = "#";
-		$lk[2] = "auth( '" . $authorize_url . "' )";
+		$lk[1] = "";
+		$lk[2] = "auth( event, '" . $authorize_url . "' )";
 	}
 	$array = array(
 		"menu" => array(
