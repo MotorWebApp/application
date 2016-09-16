@@ -18,16 +18,12 @@
 					<div role="tabpanel" class="tab-pane fade in active text-center" id="auth">
 						<form>
 							<div class="form-group">
-								<div class="col-xs-6">
-									<label for="InputEmailIn">Email</label>
-									<input type="email" class="form-control" id="InputEmailIn" placeholder="Email">
-								</div>
+								<label for="InputEmailIn">Email</label>
+								<input type="email" class="form-control login-form" id="InputEmailIn" placeholder="Email">
 							</div>
 							<div class="form-group">
-								<div class="col-xs-6">
-									<label for="InputPasswordIn">Пароль</label>
-									<input type="password" class="form-control" id="InputPasswordIn" placeholder="Пароль">
-								</div>
+								<label for="InputPasswordIn">Пароль</label>
+								<input type="password" class="form-control login-form" id="InputPasswordIn" placeholder="Пароль">
 							</div>
 							<button type="submit" class="btn btn-default">Вход</button>
 						</form>
@@ -35,22 +31,16 @@
 					<div role="tabpanel" class="tab-pane fade text-center" id="reg">
 						<form>
 							<div class="form-group">
-								<div class="col-xs-6">
-									<label for="InputEmailUp">Email</label>
-									<input type="email" class="form-control" id="InputEmailUp" placeholder="Email">
-								</div>
+								<label for="InputEmailUp">Email</label>
+								<input type="email" class="form-control login-form" id="InputEmailUp" placeholder="Email">
 							</div>
 							<div class="form-group">
-								<div class="col-xs-6">
-									<label for="InputPasswordUp1">Пароль</label>
-									<input type="password" class="form-control" id="InputPasswordUp1" placeholder="Пароль">
-								</div>
+								<label for="InputPasswordUp1">Пароль</label>
+								<input type="password" class="form-control login-form" id="InputPasswordUp1" placeholder="Пароль">
 							</div>
 							<div class="form-group">
-								<div class="col-xs-6">
-									<label for="InputPasswordUp2">Пароль еще раз</label>
-									<input type="password" class="form-control" id="InputPasswordUp2" placeholder="Повтор пароля">
-								</div>
+								<label for="InputPasswordUp2">Пароль еще раз</label>
+								<input type="password" class="form-control login-form" id="InputPasswordUp2" placeholder="Повтор пароля">
 							</div>
 							<button type="submit" class="btn btn-default">Регистрация</button>
 						</form>
