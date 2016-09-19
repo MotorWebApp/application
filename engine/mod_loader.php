@@ -9,18 +9,6 @@
 require_once( "singleModule.php" );
 require_once( "moduleDB.php" );
 
-function addBlock( $block, $args = array() ) {
-	$modFileName = "/module/". $block . ".php";
-	$response = "";
-	if( file_exists( dirname(__file__) . $modFileName ) ) {
-		include_once( dirname(__file__) . $modFileName );
-		if( is_callable( $block ) ) {
-			$response = $block( json_encode( $args ) );
-		}
-	}
-	return $response;
-}
-
 function mainPage( $city = "msk" ) {
 	require_once( __dir__ . '/../lib/VK.php' );
 	require_once( __dir__ . '/../lib/VKException.php' );

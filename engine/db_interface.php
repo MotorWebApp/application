@@ -6,7 +6,6 @@
 */
 
 // DataBase connection
-//echo 1;
 $pdo = new PDO($dsn, $username, $password, 
 	array(
 		PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -33,6 +32,27 @@ function __dbOp( $sqlQuery ) {
 	$stm->execute();
 	
 	// error handling
+}
+
+function __prepareInsertQuery( $table, $what ) {
+	$query = "insert into `" . $table ."` ";
+	$f = "(";
+	$v = "(";
+	$i = 1;
+	foreach( $what as $key => $value ) {
+		$f .= $key;
+		if( !is_numeric( $value ) ) { $value = "`" . $value . "`"; }
+		$v .= $value;
+		if( $i < count( $what ) ) {
+			$f .= ",";
+			$v .= ",";
+		}
+		$i++;
+	}
+	$f .= ")";
+	$v .= ")";
+	$query .= $f . " values " . $v;
+	return $query;
 }
 
 function __prepareSelectQuery( $from, $what, $where ) {
@@ -78,7 +98,7 @@ function __prepareSelectQuery( $from, $what, $where ) {
 			} else {
 				$item_parts[ 0 ] = "`" . $item_parts[ 0 ] . "`";
 			}
-			if(!is_numeric( $item_parts[ 1 ] )) {
+			if( !is_numeric( $item_parts[ 1 ] ) ) {
 				$item_parts[ 1 ] = "'" . $item_parts[ 1 ] . "'";
 			}
 			$item = $item_parts[ 0 ] . "=" . $item_parts[ 1 ];
@@ -93,26 +113,6 @@ function __prepareSelectQuery( $from, $what, $where ) {
 	$query = "SELECT " . $what . " FROM " . $from . " WHERE " . $where;
 	return $query;
 }
-
-//print_r( __dbGet( __prepareSelectQuery( "company,company_type", "*", "company.type=1") ) );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ?>

@@ -2,16 +2,70 @@
 
 /*
 * singleModule.php
-* The file contains definition of single modules.
+* The file contains definition of single modules. Application controller.
 */
+
+function addBlock( $block, $args = array() ) {
+	$modFileName = "/module/". $block . ".php";
+	$response = "";
+	if( file_exists( dirname(__file__) . $modFileName ) ) {
+		include_once( dirname(__file__) . $modFileName );
+		if( is_callable( $block ) ) {
+			$response = $block( json_encode( $args ) );
+		}
+	}
+	return $response;
+}
 
 function loadCounterBlock() {
 
 }
 
+function getCity( $city ) {
+	$data = __dbGet( __prepareSelectQuery( "city", "*", "short_name=" . $city ) );
+	$data = $data[0];
+	return $data;
+}
+
 function loadMap( $city ) {
-	$array = array( "city" => $city );
+	$citydata = getCity( $city );
+	$lon = $citydata[ "lon" ];
+	$lat = $citydata[ "lat" ];
+	$name = $citydata[ "name" ];
+	$array = array( "lon" => $lon, "lat" => $lat, "name" => $name );
 	return addBlock( "mapBlock", $array );
+}
+
+function regUser( $phone, $mail, $pwd, $vkid, $name, $surname ) {
+	$user = false; // error in case of false
+	if( $vkid != null ) {
+		__dbOp( __prepareInsertQuery( "user", array( "vkid" => $vkid, "name" => $name, "surname" => $surname ) ) );
+		$d = __dbGet( __prepareSelectQuery( "user", "id", "vkid=" . $vkid ) );
+		if( count( $d ) > 0 ) {
+			$user = $data[0][ "id" ];
+		}
+	} elseif( $pwd != null && ( $mail != null || $phone != null ) ) {
+	
+	}
+}
+
+function getUserId( $phone, $mail, $pwd, $vkid ) {
+	global $vk;
+	$user = false;
+	if( $vkid != null ) {
+		$data = __dbGet( __prepareSelectQuery( "user", "id", "vkid=" . $vkid ) );
+		if( count( $data ) > 0 ) {
+			$user = $data[0][ "id" ];
+		} else {
+			$d = $vk->api( "account" );
+			$name = $d[ "first_name" ];
+			$surname = $d[ "last_name" ];
+			$user = regUser( null, null, null, $vkid, $name, $surname );
+		}
+	} elseif ( $pwd != null && ( $mail != null || $phone != null ) ) {
+	
+	}
+	return $user;
 }
 
 function loadHeader() {
@@ -23,23 +77,11 @@ function loadHeader() {
 	 *		2 - js onclick() function
 	 *		3 - array of subitems
 	*/
+	global $vk, $vk_config;
 	
-	$uri = "http://$_SERVER[SERVER_NAME]$_SERVER[REQUEST_URI]";
-	
-	$vk_config = array(
-		'app_id'		=> '5631456',
-		'api_secret'	=> '8skDiqK3C5KTVaqEkj9S',
-		'callback_url'  => explode( "?", $uri )[0],
-		'api_settings'  => 'friends' // In this example use 'friends'.
-	);
-	
-	$vk = new VK\VK( $vk_config[ 'app_id' ], $vk_config[ 'api_secret' ] );
-	$authorize_url = "";
-	$access_token = "";
-	if ( !isset( $_REQUEST[ 'code' ] ) ) {
-		$authorize_url = $vk->getAuthorizeURL( $vk_config[ 'api_settings' ], $vk_config[ 'callback_url' ]);
-	} else {
+	if ( isset( $_REQUEST[ 'code' ] ) ) {
 		$access_token = $vk->getAccessToken( $_REQUEST[ 'code' ], $vk_config[ 'callback_url' ] );
+		$sys_id = getUserId( null, null, null, $access_token['user_id'] );
 		$_SESSION['userid'] = $access_token['user_id'];
 		$_SESSION['access_token'] = $access_token['access_token'];
 		header( $vk_config[ 'callback_url' ] );
