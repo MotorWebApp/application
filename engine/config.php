@@ -25,6 +25,8 @@ $dsn = "mysql:host={$dbhost};port={$dbport};dbname={$dbname};";
 ###########
 #	Section 2: Vkontakte
 ###########
+require_once( __dir__ . '/../lib/VK.php' );
+require_once( __dir__ . '/../lib/VKException.php' );
 $uri = "http://$_SERVER[SERVER_NAME]$_SERVER[REQUEST_URI]";
 $vk_config = array(
 	'app_id'		=> '5631456',

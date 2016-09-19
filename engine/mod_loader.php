@@ -10,8 +10,6 @@ require_once( "singleModule.php" );
 require_once( "moduleDB.php" );
 
 function mainPage( $city = "msk" ) {
-	require_once( __dir__ . '/../lib/VK.php' );
-	require_once( __dir__ . '/../lib/VKException.php' );
 	$html = loadPageHeader();
 	$html .= loadHeader();
 	$html .= loadMap( $city );
