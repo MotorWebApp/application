@@ -77,7 +77,7 @@ function loadHeader() {
 	 *		2 - js onclick() function
 	 *		3 - array of subitems
 	*/
-	global $vk, $vk_config $authorize_url;
+	global $vk, $vk_config, $authorize_url;
 	
 	if ( isset( $_REQUEST[ 'code' ] ) ) {
 		$access_token = $vk->getAccessToken( $_REQUEST[ 'code' ], $vk_config[ 'callback_url' ] );
