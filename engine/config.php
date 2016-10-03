@@ -28,11 +28,13 @@ $dsn = "mysql:host={$dbhost};port={$dbport};dbname={$dbname};";
 require_once( __dir__ . '/../lib/VK.php' );
 require_once( __dir__ . '/../lib/VKException.php' );
 $uri = "http://$_SERVER[SERVER_NAME]$_SERVER[REQUEST_URI]";
+preg_match("^.*(\/\w+)+", $uri, $matches);
+$uri = $matches[ 0 ];
 $vk_config = array(
 	'app_id'		=> '5631456',
 	'api_secret'	=> '8skDiqK3C5KTVaqEkj9S',
-	'callback_url'  => explode( "?", $uri )[0],
-	'api_settings'  => 'friends,account' // In this example use 'friends'.
+	'callback_url'  => $uri,
+	'api_settings'  => 'friends,account'
 );
 $vk = new VK\VK( $vk_config[ 'app_id' ], $vk_config[ 'api_secret' ] );
 $authorize_url = $vk->getAuthorizeURL( $vk_config[ 'api_settings' ], $vk_config[ 'callback_url' ]);
