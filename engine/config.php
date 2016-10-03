@@ -28,7 +28,7 @@ $dsn = "mysql:host={$dbhost};port={$dbport};dbname={$dbname};";
 require_once( __dir__ . '/../lib/VK.php' );
 require_once( __dir__ . '/../lib/VKException.php' );
 $uri = "http://$_SERVER[SERVER_NAME]$_SERVER[REQUEST_URI]";
-preg_match("^.*(\/\w+)+", $uri, $matches);
+preg_match("^.*(\/[\-\.\w]+)+", $uri, $matches);
 $uri = $matches[ 0 ];
 $vk_config = array(
 	'app_id'		=> '5631456',
